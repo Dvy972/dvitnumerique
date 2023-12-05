@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Visite DV IT NUMERIQUE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background: url(/IMG/Support\ Informatique.png);
+        }
+
+        h1 {
+            font-style: italic;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .centered-section {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .social-icons i {
+            font-size: 24px;
+        }
+
+        .action-buttons button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Style pour le formulaire */
+         .appointment-form {
+            margin-top: 20px;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .appointment-form input,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .appointment-form button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <header>
+        <img id="profile-picture" src="../CARTE DE VISITE NUMERIQUE DV IT NUMERIQUE V4/IMG/LOGO DV IT NUMERIQUE.png" alt="Profile Picture">
+        <h1>David VENITE</h1>
+    </header>
+    
+    <!-- Coordonnées -->
+    <div class="centered-section">
+        <p><span style="color: rgb(0, 125, 147);">INFORMATICIEN</span></p>
+        <div class="contact-info">
+            <i class="fas fa-phone"></i> <a href="tel:0764798566">07 64 79 85 66</a>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i> <a href="mailto:david.venite@outlook.fr">david.venite@outlook.fr</a>
+        </div>
+
+        <i class="fas fa-globe"></i> <a href="https://www.dv-it-numerique.fr" target="_blank">https://www.dv-it-numerique.fr</a>
+        
+        <p><span>3 Rue Jules Guesde 91130 RIS-ORANGIS</span></p>
+
+        <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i> <button class="open-map-button" onclick="openMap()">Maps</button>
+        </div>
+
+        <h3>EI (Entrepreneur Individuel)</h3>
+    </div>
+
+    <!-- Icones réseaux sociaux -->
+    <div class="centered-section social-icons">
+        <h2>Réseaux sociaux</h2>
+        <a href="https://www.instagram.com/dvitnumerique" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/+33764798566" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+     
+    <!-- Bouton de partage -->
+    <div class="centered-section action-buttons"> 
+        <i class="fas fa-share-alt"></i>
+        <button class="share-button" onclick="shareContact()">Partager</button>
+    </div>
+
+    <!-- Section pour la prise de rendez-vous -->
+    <div class="centered-section action-buttons">
+         <div class="contact-info">
+            <i class="far fa-calendar-alt"></i> <button class="appointment-button" onclick="openAppointmentForm()">Prise de rendez-vous</button>
+        </div>
+
+        <!-- Formulaire de rendez-vous (initialement masqué) -->
+        <div id="appointment-form" class="appointment-form" style="display: none;">
+            <h2>Prise de Rendez-vous</h2>
+            <form onsubmit="submitAppointmentForm(event)">
+                <label for="name">NOM :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="firt name">Prénom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Date souhaitée :</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+
+        // Option pour appeler
+        function callContact() {
+
+            window.location.href = 'tel:+33764798566';
+        }
+        
+        // Option pour envoyer un email
+        function sendEmail() {
+            window.location.href = 'mailto:david.venite@outlook.fr';
+        }
+        
+        // Option pour ouvrir l'adresse sur une carte maps
+        function openMap() {
+            window.open('https://maps.google.com/?q=3 Rue Jules Guesde 91130 RIS-ORANGIS', '_blank');
+        }
+
+        function shareContact() {
+            const companyName = "DV IT NUMERIQUE"; // Ajout du nom de l'entreprise
+            const contactInfo = {
+                
+                name: "David VENITE",
+                email: "david.venite@outlook.fr",
+                phone: "0764798566"
+            };
+
+            const shareText = ` ${companyName}\nPrénom NOM: ${contactInfo.name}\nEmail: ${contactInfo.email}\nTéléphone: ${contactInfo.phone}`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Informations de Contact',
+                    text: shareText
+                })
+                .then(() => console.log('Partage réussi'))
+                .catch((error) => console.error('Erreur de partage', error));
+            } else {
+                // Alternative pour les navigateurs ne supportant pas l'API de partage
+                const shareUrl = `https://example.com/share?text=${encodeURIComponent(shareText)}`;
+                window.open(shareUrl, '_blank');
+            }
+        }
+
+        function shareOnSocialMedia(platform) {
+            // Ajoutez le code pour partager sur le réseau social spécifié (ex: Facebook, Twitter)
+            alert('Partager sur ' + platform);
+        }
+
+        function shareOnEmail() {
+            // Ajoutez le code pour composer un e-mail avec les informations de contact
+            alert('Composer un e-mail');
+        }
+
+        function openAppointmentForm() {
+            // Affiche le formulaire de rendez-vous
+            document.getElementById('appointment-form').style.display = 'block';
+        }
+
+        // Récupère les valeurs du formulaire
+        function submitAppointmentForm(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var date = document.getElementById('date').value;
+            var message = document.getElementById('message').value;
+
+            // Vous pouvez envoyer ces données par e-mail ou les traiter sur votre serveur
+            // Pour cet exemple, nous affichons simplement les données dans une alerte
+            alert('Nom: ' + name + '\nE-mail: ' + email + '\nDate: ' + date + '\nMessage: ' + message);
+
+            // Vous pouvez également réinitialiser le formulaire après l'envoi
+            document.getElementById('appointment-form').reset();
+        }
+    </script>
+</body>
+</html>
